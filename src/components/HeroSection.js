@@ -1,8 +1,10 @@
 import React from 'react'
-import { Container, Row, Col, Button, Figure } from 'react-bootstrap'
+import { Container, Row, Col, Button, } from 'react-bootstrap'
+import Hero from '../assets/images/Hero.png'
 
 function HeroSection() {
     return (
+        <div>
         <Container>
             <Row>
                 <Col className='mt-5 pt-4'>
@@ -13,18 +15,12 @@ function HeroSection() {
                     variant="primary">Mulai Belajar</Button>{' '}
                 </Col>
 
-                <Col>
-                <Figure className='mt-5 pt-5'>
-                    <Figure.Image
-                        width={400}
-                        height={400}
-                        alt="500x500"
-                        src="assets/image/Hero-Section.png"
-                    />
-                </Figure>
+                <Col className='mt-5 pt-4'>
+                <img className='mt-2' src={Hero} alt='Hero Section' />
                 </Col>
             </Row>
         </Container>
+        </div>
     )
 }
 
