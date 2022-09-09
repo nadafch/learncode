@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+div {
+    font-family: 'Poppins', sans-serif;
+}
+.Login {
+    padding: 40px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foot {
+    position: fixed;
+    padding-top: 10px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(46, 46, 46);
+    color: white;
+    text-align: center;
+}
