@@ -1,7 +1,22 @@
+import React from "react";
 import { Navbar, Container, Nav, Button} from "react-bootstrap";
+import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom"
 import LearnCode from '../assets/images/LearnCode.png'
 
-function NavBar () {
+function NavBar ({title}) {
+    const navigate = useNavigate();
+    function handlerAction (type){
+        switch (type) {
+        case 'login':
+            navigate('/Login')
+        break;
+        case 'logout':
+            localStorage.removeItem('token')
+            navigate('/')
+        break;  
+    }
+    }
     return (
         <div>
             <Navbar bg="light">
@@ -11,9 +26,20 @@ function NavBar () {
                              height={23}/>
                     </Navbar.Brand>
                     <Nav>
-                        <Nav.Link className="px-4">Home</Nav.Link>
-                        <Nav.Link className="mx-2 px-4">Belajar</Nav.Link>
-                        <Button className="mx-4 px-4" variant="outline-primary">Masuk</Button>{''}
+                        {
+                            localStorage.getItem('token') == 'adaTokenNih' ? (
+                                <React.Fragment>
+                                    <Nav.Link to='/Dashboard'>All Course</Nav.Link>
+                                    <Button variant="outline-primary" onClick={(e) => handlerAction('logout')}>Logout</Button>
+                                </React.Fragment>
+                            ) : (
+                               <React.Fragment>
+                                    <Nav.Link to='/'>Home</Nav.Link>
+                                    <Nav.Link>Belajar</Nav.Link>
+                                    <Button variant="outline-primary" onClick={(e) => handlerAction('login')}>Login</Button>
+                               </React.Fragment>
+                            )
+                        }
                     </Nav>
                 </Container>
             </Navbar>
