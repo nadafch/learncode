@@ -1,15 +1,18 @@
+
 import Home from './components/Home';
 import Login from './components/Login';
 import Foot from './components/foot'
 import FourZeroFour from './components/FourZeroFour';
 import { Route, Routes } from 'react-router-dom';
-import "./style/style.css"
+import "./styles/style.css"
 import Dashboard from './components/Dashboard';
 import React from 'react';
 
 
+
 function App() {
   return (
+
     <React.Fragment>
       <Routes>
         <Route path='/' element={

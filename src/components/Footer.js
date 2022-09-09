@@ -1,12 +1,12 @@
 import React from "react";
-import "../styles/style.css";
+import "../styles/styles.css";
 
-function Foot() {
+function Footer() {
     return(
-        <div className="foot">
+        <div className="footer">
             <p>©2022 Copyright Team LearnCode</p>
         </div>
     )
 }
 
-export default Foot;
+export default Footer;

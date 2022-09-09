@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from './NavBar'
 import { Table, Container, Button } from "react-bootstrap";
-import "../style/style.css"
+import "../styles/style.css"
 
 function Dashboard () {
     return (

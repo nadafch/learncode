@@ -22,7 +22,8 @@ function NavBar ({title}) {
             <Navbar bg="light">
                 <Container>
                     <Navbar.Brand>
-                        <img src={LearnCode} alt="Logo"/>
+                        <img src={LearnCode} alt="Logo"
+                             height={23}/>
                     </Navbar.Brand>
                     <Nav>
                         {

@@ -1,6 +1,6 @@
 import React from "react";
 import {Nav,Navbar } from "react-bootstrap";
-import "../style/style.css"
+import "../styles/style.css"
 
 function SecondNav () {
     return (
