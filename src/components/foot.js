@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/style.css";
+import "../styles/style.css";
 
 function Foot() {
     return(

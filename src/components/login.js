@@ -7,8 +7,9 @@ function Login (){
             <Container className="text-start">
                 <Row>
                     <Col className="mt-4 mr-4">
-                    <img src={LearnCode}/>
-                    <h5 className="mt-4">LearnCode membantu Anda belajar bahasa Pemograman.</h5>
+                    <img src={LearnCode} alt="Logo"
+                         height={30}/>
+                    <h4 className="mt-4 pt-1">LearnCode membantu Anda <br /> belajar bahasa Pemograman.</h4>
                     </Col>
                     <Col>
                         <div>
