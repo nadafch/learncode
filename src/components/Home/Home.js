@@ -1,5 +1,5 @@
 import AppFeatures from "../AppFeatures";
-import HeroSection from "../heroSection";
+import HeroSection from "../HeroSection";
 import NavBar from "../NavBar";
 
 function Home() {
@@ -8,7 +8,7 @@ function Home() {
       <div style={{ width: '80%', margin: '0 auto' }}>
       </div>
       <NavBar/>
-      <HeroSection/>
+      <HeroSection />
       <AppFeatures />
     </>
   );

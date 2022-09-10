@@ -1,5 +1,6 @@
 import React from "react";
-import NavBar from './NavBar'
+import NavBar from './NavBar';
+import Input from "./Input";
 import { Table, Container, Button } from "react-bootstrap";
 import "../styles/style.css"
 
@@ -11,7 +12,7 @@ function Dashboard () {
                 <h3><strong>Daftar Materi</strong></h3>
             </div>
             <Container className="dashboard text-center">
-                <Button variant="outline-primary">Tambahkan data</Button>
+                <Button variant="outline-primary" onClick={Input}>Tambahkan data</Button>
                 <Table striped bordered hover>
                     <thead>
                         <tr>
