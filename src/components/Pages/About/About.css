@@ -1,0 +1,9 @@
+.content{
+    gap:10px;
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+}
+.judul{
+    text-align: center;
+    font-weight: 600;
+}
