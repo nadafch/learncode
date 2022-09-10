@@ -1,7 +1,14 @@
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import LearnCode from "../assets/images/LearnCode.png"
 
 function Login (){
+    const navigate = useNavigate();
+    function submitLogin(event) {
+    event.preventDefault()
+    localStorage.setItem('token', 'adaTokenNih')
+    navigate('/Dashboard')
+    }
     return(
         <div className="Login">
             <Container className="text-start">
@@ -13,7 +20,7 @@ function Login (){
                     </Col>
                     <Col>
                         <div>
-                            <Form>
+                            <Form  id="form" onSubmit={(event) => submitLogin(event)}>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label>Username</Form.Label>
                                     <Form.Control type="username" placeholder="Enter Username" />
@@ -34,4 +41,4 @@ function Login (){
         </div>
     )
 }
- export default Login;
+ export default Login
