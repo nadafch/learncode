@@ -1,7 +1,8 @@
 
 import Home from './components/Home';
 import Login from './components/Login';
-import Foot from './components/foot'
+import Input from './components/Input';
+import Foot from './components/foot';
 import FourZeroFour from './components/FourZeroFour';
 import { Route, Routes } from 'react-router-dom';
 import "./styles/style.css"
@@ -20,6 +21,7 @@ function App() {
         } exact />
         <Route path='/Login' element={<Login/>}/>
         <Route path='/Dashboard' element={<Dashboard/>}/>
+        <Route path='/Input' element={<Input/>}/>
         <Route path='*' element={FourZeroFour}/>
       </Routes>
       <Foot/>
