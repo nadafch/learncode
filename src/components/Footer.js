@@ -4,7 +4,7 @@ import "../styles/styles.css";
 function Footer() {
     return(
         <div className="footer">
-            <p>©2022 Copyright Team LearnCode</p>
+            <p class="text-dark">Copyright &copy; 2022 by <strong>Team LearnCode</strong></p>
         </div>
     )
 }
