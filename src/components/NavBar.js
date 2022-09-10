@@ -28,7 +28,7 @@ function NavBar ({title}) {
                         {
                             localStorage.getItem('token') == 'adaTokenNih' ? (
                                 <React.Fragment>
-                                    <Nav.Link to='/Dashboard'>All Course</Nav.Link>
+                                    <Nav.Link className="mx-5" to='/Dashboard'>All Course</Nav.Link>
                                     <Button variant="outline-primary" onClick={(e) => handlerAction('logout')}>Logout</Button>
                                 </React.Fragment>
                             ) : (
