@@ -8,7 +8,6 @@ import Foot from './foot'
 function LearnPage() {
   return (
     <React.Fragment>
-        <NavBar />
         <SecondNav />
         <Container>
         <h4 className='mt-5 text-start text-primary'><strong>Ini dia yang kamu cari</strong></h4>
@@ -95,7 +94,6 @@ function LearnPage() {
                 <Pagination.Next />
             </Pagination>
         </Container>
-    <Foot/>
     </React.Fragment>
     
   )

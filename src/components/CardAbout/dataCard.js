@@ -7,7 +7,7 @@ const data = [
         pengalaman:"Frontend Developer Internship BALITTAS, Malang",
     },
     {
-        image:require('../../assets/images/css.png'),
+        image:require('../../assets/images/syifa.jpg'),
         nama:"Syifa Nur Nabila ",
         pendidikan:"SMK Teknik Komputer & Jaringan",
         pengalaman:"  Mengikuti Bootcamp Front End di Kawah Edukasi",
@@ -19,7 +19,7 @@ const data = [
         pengalaman:"Teknisi Komputer & Jaringan Di PT. Egyd Komputer",
     },
     {
-        image:require('../../assets/images/css.png'),
+        image:require('../../assets/images/tachul.jpg'),
         nama:"Miftachul Huda",
         pendidikan:"D3 Teknologi Hasil Pertanian",
         pengalaman:"Frontend Developer Freelancer Project MBKM at UMY with React JS and Material UI, Remote.",
