@@ -1,80 +1,83 @@
 import React from 'react'
 import { Container, Card, Row, Col, Pagination} from 'react-bootstrap'
 import htmlPage from '../assets/images/htmlPage.png'
+import NavBar from './NavBar'
+import SecondNav from './secondaryNav'
+import Foot from './foot'
 
 function LearnPage() {
   return (
     <React.Fragment>
+        <NavBar />
+        <SecondNav />
         <Container>
-        <h4 className='mt-5 text-start text-primary'><strong>INI DIA YANG KAMU CARI</strong></h4>
+        <h4 className='mt-5 text-start text-primary'><strong>Ini dia yang kamu cari</strong></h4>
         <p className='mt-5 mb-5 text-start text-dark'><strong>Ada ${} Artikel dalam Kategori HTML</strong></p>
         </Container>
         <Container>
-            <Row className='mb-5'>
-                <Col>
-                <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={htmlPage} alt="HTML"/>
+            <Row className=''>
+                <Col className='col-md-4 mb-4'>
+                <Card style={{ width: '18rem' }} className='shadow p-2 mb-3'>
+                <Card.Img variant="top" src={htmlPage} alt="HTML" className='border border-white border-5'/>
                 <Card.Body>
-                    <Card.Title>Cara Membuat tabel di HTML</Card.Title>
-                    <p>
+                <h6 className='mb-3 card-text'><strong>Cara Membuat tabel di HTML</strong></h6>
+                    <p className='card-text'>
                     Some quick example text to build
                     </p>
                 </Card.Body>
                 </Card>
                 </Col>
-                <Col>
-                <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={htmlPage} alt="HTML"/>
+                <Col className='col-md-4 mb-4'>
+                <Card style={{ width: '18rem' }} className='shadow p-2 mb-3'>
+                <Card.Img variant="top" src={htmlPage} alt="HTML" className='border border-white border-5'/>
                 <Card.Body>
-                    <Card.Title>Cara Membuat tabel di HTML</Card.Title>
-                    <p>
+                <h6 className='mb-3 card-text'><strong>Cara Membuat tabel di HTML</strong></h6>
+                    <p className='card-text'>
                     Some quick example text to build
                     </p>
                 </Card.Body>
                 </Card>
                 </Col>
-                <Col>
-                <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={htmlPage} alt="HTML"/>
+                <Col className='col-md-4 mb-4'>
+                <Card style={{ width: '18rem' }} className='shadow p-2 mb-3'>
+                <Card.Img variant="top" src={htmlPage} alt="HTML" className='border border-white border-5'/>
                 <Card.Body>
-                    <Card.Title>Cara Membuat tabel di HTML</Card.Title>
-                    <p>
+                <h6 className='mb-3 card-text'><strong>Cara Membuat tabel di HTML</strong></h6>
+                    <p className='card-text'>
                     Some quick example text to build
                     </p>
                 </Card.Body>
                 </Card>
                 </Col>
-            </Row>
-
-            <Row>
-                <Col>
-                <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={htmlPage} alt="HTML"/>
+            
+                <Col className='col-md-4 mb-4'>
+                <Card style={{ width: '18rem' }} className='shadow p-2 mb-3'>
+                <Card.Img variant="top" src={htmlPage} alt="HTML" className='border border-white border-5'/>
                 <Card.Body>
-                    <Card.Title>Cara Membuat tabel di HTML</Card.Title>
-                    <p>
+                <h6 className='mb-3 card-text'><strong>Cara Membuat tabel di HTML</strong></h6>
+                    <p className='card-text'>
                     Some quick example text to build
                     </p>
                 </Card.Body>
                 </Card>
                 </Col>
-                <Col>
-                <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={htmlPage} alt="HTML"/>
+                <Col className='col-md-4 mb-4'>
+                <Card style={{ width: '18rem' }} className='shadow p-2 mb-3'>
+                <Card.Img variant="top" src={htmlPage} alt="HTML" className='border border-white border-5'/>
                 <Card.Body>
-                    <Card.Title>Cara Membuat tabel di HTML</Card.Title>
-                    <p>
+                    <h6 className='mb-3 card-text'><strong>Cara Membuat tabel di HTML</strong></h6>
+                    <p className='card-text'>
                     Some quick example text to build
                     </p>
                 </Card.Body>
                 </Card>
                 </Col>
-                <Col>
-                <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={htmlPage} alt="HTML"/>
+                <Col className='col-md-4 mb-4'>
+                <Card style={{ width: '18rem' }} className='shadow p-2 mb-3'>
+                <Card.Img variant="top" src={htmlPage} alt="HTML" className='border border-white border-5'/>
                 <Card.Body>
-                    <Card.Title>Cara Membuat tabel di HTML</Card.Title>
-                    <p>
+                    <h6 className='mb-3 card-text'><strong>Cara Membuat tabel di HTML</strong></h6>
+                    <p className='card-text'>
                     Some quick example text to build
                     </p>
                 </Card.Body>
@@ -92,7 +95,7 @@ function LearnPage() {
                 <Pagination.Next />
             </Pagination>
         </Container>
-        
+    <Foot/>
     </React.Fragment>
     
   )

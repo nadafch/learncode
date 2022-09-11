@@ -34,7 +34,7 @@ function NavBar ({title}) {
                             ) : (
                                <React.Fragment>
                                     <Nav.Link className="mx-5" to='/'>Home</Nav.Link>
-                                    <Nav.Link className="mr-3 ml-4">Belajar</Nav.Link>
+                                    <Nav.Link className="mr-3 ml-4" to='/LearnPage'>Belajar</Nav.Link>
                                     <Nav.Link className="mx-5">About</Nav.Link>
                                     <Button variant="outline-primary" onClick={(e) => handlerAction('login')}>Login</Button>
                                </React.Fragment>

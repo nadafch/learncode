@@ -10,17 +10,12 @@ import React from 'react';
 import LearnUser from './components/LearnUser';
 import LearnPage from './components/LearnPage';
 import NavBar from './components/NavBar';
+import SecondNav from './components/secondaryNav';
 
 
 
 function App() {
   return (
-    // <React.Fragment>
-    //   <NavBar />
-    //   <LearnUser />
-    //   <LearnPage />
-    //   <Foot />
-    // </React.Fragment>
     
     <React.Fragment>
       <Routes>
@@ -33,20 +28,6 @@ function App() {
       </Routes>
       <Foot/>
     </React.Fragment>
-
-
-    // <React.Fragment>
-    //   <Routes>
-    //     <Route path='/' element={
-    //       <Home/>
-    //     } exact />
-    //     <Route path='/Login' element={<Login/>}/>
-    //     <Route path='/Dashboard' element={<Dashboard/>}/>
-    //     <Route path='/Input' element={<Input/>}/>
-    //     <Route path='*' element={FourZeroFour}/>
-    //   </Routes>
-    //   <Foot/>
-    // </React.Fragment>
   )
 }
 
