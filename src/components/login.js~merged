@@ -1,7 +1,21 @@
+<<<<<<< HEAD
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import LearnCode from "../assets/images/LearnCode.png"
 
 function Login (){
+=======
+import { Container, Row, Col, Button, Form} from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import LearnCode from "../assets/images/LearnCode.png"
+
+function Login (){
+    const navigate = useNavigate();
+    function submitLogin(event) {
+    event.preventDefault()
+    localStorage.setItem('token', 'adaTokenNih')
+    navigate('/Dashboard')
+    }
+>>>>>>> 1d1453af7d6c0686d06ffeb882f297c02582920a
     return(
         <div className="Login">
             <Container className="text-start">
@@ -13,7 +27,11 @@ function Login (){
                     </Col>
                     <Col>
                         <div>
+<<<<<<< HEAD
                             <Form>
+=======
+                            <Form  id="form" onSubmit={(event) => submitLogin(event)}>
+>>>>>>> 1d1453af7d6c0686d06ffeb882f297c02582920a
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label>Username</Form.Label>
                                     <Form.Control type="username" placeholder="Enter Username" />
@@ -34,4 +52,8 @@ function Login (){
         </div>
     )
 }
+<<<<<<< HEAD
  export default Login;
+=======
+ export default Login
+>>>>>>> 1d1453af7d6c0686d06ffeb882f297c02582920a
