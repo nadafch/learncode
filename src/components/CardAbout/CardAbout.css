@@ -5,9 +5,10 @@
   font-family: sans-serif;
 }
 .card{
+padding: 10px;
 border-color: blue;
 width: 25em;
-height: 20em;
+height: auto;
 border-radius: 7%;
 box-shadow: 3px 3px 3px grey;
 }

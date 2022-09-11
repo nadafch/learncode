@@ -10,7 +10,6 @@ function Dashboard () {
     return (
         <React.Fragment>
             <div className="Dash">
-            <NavBar />
             <div className="d-flex justify-content-center px-auto pt-4">
                 <h3><strong>Daftar Materi</strong></h3>
             </div>

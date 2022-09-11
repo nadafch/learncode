@@ -1,32 +1,26 @@
+import React from "react";
 import CardAbout from "../../CardAbout/CardAbout";
 import data from "../../CardAbout/dataCard";
-import NavBar from "../../NavBar"
 import './About.css';
 
 function About() {
   
   return (
-
-    <div className="container">
-      <div>
-        <NavBar />
-      </div>
-      <div>
-        <h1 className="judul">GROUP MEMBER</h1>
-      </div>
+    <React.Fragment>
       <div className="content">
-      {data.map(d =>(
-      <CardAbout 
-      image={d.image}
-      nama={d.nama}
-      pendidikan={d.pendidikan}
-      pengalaman ={d.pengalaman}
-      />
-     ))} 
+          <h1 className="judul">GROUP MEMBER</h1>
+        <div className="Card">
+              {data.map(d =>(
+              <CardAbout 
+              image={d.image}
+              nama={d.nama}
+              pendidikan={d.pendidikan}
+              pengalaman ={d.pengalaman}
+              />
+            ))}
+        </div>
       </div>
-    </div>
-
-    
+    </React.Fragment>
   );
 }
 

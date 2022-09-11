@@ -1,8 +1,18 @@
-import { Container, Row, Col, Button, Form } from "react-bootstrap";
+import { Container, Row, Col, Button, Form, Navbar } from "react-bootstrap";
+import NavBar from "./NavBar";
+import { useNavigate } from "react-router-dom";
 import LearnCode from "../assets/images/LearnCode.png"
+import React from "react";
 
 function Login (){
+    const navigate = useNavigate();
+    function submitLogin(event) {
+    event.preventDefault()
+    localStorage.setItem('token', 'adaTokenNih')
+    navigate('/Dashboard')
+    }
     return(
+       <React.Fragment>
         <div className="Login">
             <Container className="text-start">
                 <Row>
@@ -13,7 +23,7 @@ function Login (){
                     </Col>
                     <Col>
                         <div>
-                            <Form>
+                            <Form id="form" onSubmit={(event) => submitLogin(event)}>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label>Username</Form.Label>
                                     <Form.Control type="username" placeholder="Enter Username" />
@@ -32,6 +42,7 @@ function Login (){
                 </Row>
             </Container>
         </div>
+       </React.Fragment>
     )
 }
  export default Login;
