@@ -4,7 +4,7 @@ import "../styles/style.css";
 function Foot() {
     return(
         <div className="foot">
-            <p>©2022 Copyright Team LearnCode</p>
+            <p>Copyright &copy; 2022 by <strong>Team LearnCode</strong></p>
         </div>
     )
 }
