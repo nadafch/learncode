@@ -1,0 +1,37 @@
+*{
+  margin: 0cm;
+  padding: 0cm;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.card{
+padding: 10px;
+border-color: blue;
+width: 25em;
+height: auto;
+border-radius: 7%;
+box-shadow: 3px 3px 3px grey;
+}
+
+.content .mx-auto{
+  object-fit:cover;
+  border-radius: 50%;
+  border:4px solid #4070f4;
+  position:relative;
+  z-index: 100;
+}
+.card_body{
+    text-align: center;
+}
+.nama{
+  font-weight: 600;
+}
+.pendidikan{
+  font-weight: 600;
+  margin: 12px 0;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+    
+
+

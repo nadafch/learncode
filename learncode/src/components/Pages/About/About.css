@@ -1,0 +1,29 @@
+/* .content{
+    gap:10px;
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    width: 100%;
+}
+.judul{
+    text-align: center;
+    font-weight: 600;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+.content {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Card {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 5px;
+}
