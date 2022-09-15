@@ -5,7 +5,7 @@ import ReactPaginate from 'react-paginate';
 import "./Learn.css"
 
 function LearnMap() {
-    const [contents, setContents] = useState(learn.slice(0, 6));
+    const [contents, setContents] = useState(learn);
     const [pageNumber, setPageNumber] = useState(0)
 
     const contentsPerPage = 6
