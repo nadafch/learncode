@@ -13,7 +13,7 @@ function Belajar() {
       </Container>
 
       <LearnMap />
-
+      {/* 
       <Container className='mt-4 mb-5'>
         <Pagination>
           <Pagination.Item>{1}</Pagination.Item>
@@ -22,7 +22,7 @@ function Belajar() {
           <Pagination.Ellipsis />
           <Pagination.Next />
         </Pagination>
-      </Container>
+      </Container> */}
     </React.Fragment>
   )
 }

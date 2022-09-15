@@ -1,5 +1,5 @@
 import AppFeatures from "../AppFeatures";
-import HeroSection from "../HeroSection";
+import HeroSection from "../heroSection";
 
 function Home() {
     return (
