@@ -46,20 +46,6 @@ function LearnMap() {
             />
         </div>
 
-
-
-        // <React.Fragment>
-        //     <div className="Card">
-        //         {learn.map((dl) => (
-        //             <LearnPage
-        //                 image={dl.image}
-        //                 judul={dl.judul}
-        //                 penulis={dl.penulis}
-        //                 text={dl.text}
-        //             />
-        //         ))}
-        //     </div>
-        // </React.Fragment>
     )
 }
 

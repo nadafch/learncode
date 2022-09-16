@@ -1,18 +1,18 @@
 import React from 'react';
 import { CDBFooter, CDBFooterLink, CDBBox, CDBBtn, CDBIcon } from 'cdbreact';
-import { Container } from 'react-bootstrap';
+import { Container, Footer } from 'react-bootstrap';
 import "../styles/style.css";
 import LearnCode from '../assets/images/LearnCode.png'
 
 export default function foot() {
     return (
         <Container>
-            <CDBFooter className="">
+            <div className="">
                 <CDBBox display="flex" flex="column" className="mx-auto py-5" style={{ width: '90%' }}>
                     <CDBBox display="flex" justifyContent="between" className="flex-wrap">
-                        <CDBBox>
+                        <CDBBox data-aos="fade-right" data-aos-duration="2000">
                             <a href="/" className="d-flex align-items-center p-0 text-dark">
-                                <img alt="logo" src={LearnCode} height={30} />
+                                <img className='mb-1' alt="logo" src={LearnCode} height={30} />
                             </a>
                             <p className="my-3" style={{ width: '250px' }}>
                                 We are a PlatForm that provides free learning through materials and video references that we recommend.
@@ -29,43 +29,43 @@ export default function foot() {
                                 </CDBBtn>
                             </CDBBox>
                         </CDBBox>
-                        <CDBBox>
+                        <CDBBox data-aos="fade-left" data-aos-duration="2000">
                             <p className="h5 mb-4" style={{ fontWeight: '600', color: '#4154F1' }}>
                                 Explore
                             </p>
                             <div className="d-flex flex-column" style={{ cursor: 'pointer', padding: '0' }}>
-                                <a className="td text-dark" href="/">Home</a>
-                                <a className="td text-dark" href="/">Courses</a>
-                                <a className="td text-dark" href="/">About Us</a>
+                                <a className="td text-dark mb-1" href="/">Home</a>
+                                <a className="td text-dark mb-1" href="/">Courses</a>
+                                <a className="td text-dark mb-1" href="/">About Us</a>
                                 <a className="td text-dark" href="/">Contact</a>
                             </div>
                         </CDBBox>
-                        <CDBBox>
+                        <CDBBox data-aos="fade-left" data-aos-duration="2000">
                             <p className="h5 mb-4" style={{ fontWeight: '600', color: '#4154F1' }}>
                                 Help
                             </p>
                             <div className="d-flex flex-column" style={{ cursor: 'pointer', padding: '0' }}>
-                                <a className="td text-dark" href="/">Support</a>
-                                <a className="td text-dark" href="/">Sign Up</a>
+                                <a className="td text-dark mb-1" href="/">Support</a>
+                                <a className="td text-dark mb-1" href="/">Sign Up</a>
                                 <a className="td text-dark" href="/">Sign In</a>
                             </div>
                         </CDBBox>
-                        <CDBBox>
+                        <CDBBox data-aos="fade-left" data-aos-duration="2000">
                             <p className="h5 mb-4" style={{ fontWeight: '600', color: '#4154F1' }}>
                                 Products
                             </p>
                             <div className="d-flex flex-column" style={{ cursor: 'pointer', padding: '0' }}>
-                                <a className="td text-dark" href="/">Bootstrap</a>
-                                <a className="td text-dark" href="/">JavaScript</a>
+                                <a className="td text-dark mb-1" href="/">Bootstrap</a>
+                                <a className="td text-dark mb-1" href="/">JavaScript</a>
                                 <a className="td text-dark" href="/">React JS</a>
                             </div>
                         </CDBBox>
                     </CDBBox>
                     <div className="text-center mt-5">
-                        Copyright &copy; 2022 by <strong>Team LearnCode</strong>
+                        <p>Copyright &copy; 2022 by <strong>Team LearnCode</strong></p>
                     </div>
                 </CDBBox>
-            </CDBFooter>
+            </div>
         </Container>
     );
 };
