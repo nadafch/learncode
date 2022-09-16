@@ -8,10 +8,20 @@ div {
     font-family: 'Poppins', sans-serif;
 }
 .Login {
-    height: 93vh;
+    margin-bottom: 70px;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.Login p {
+    color: tomato;
+    font-size: 14px;
+}
+
+.Login h3 {
+    text-align: center;
 }
 
 .nav {

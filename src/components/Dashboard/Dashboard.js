@@ -1,11 +1,55 @@
 import React, { useState } from "react";
+import swal from "sweetalert";
 import { Table, Container, Button, Modal, Form, Dropdown, DropdownButton } from "react-bootstrap";
-import "../styles/style.css"
+import data from "./data.json"
+import "../../styles/style.css"
 
 function Dashboard() {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const [jsondata, setJsonData] = useState(data);
+    const saveClick = () => {
+        swal("Good job!", "Your data have been saved", "success");
+        handleClose();
+    }
+    const deleteClick = () => {
+        swal({
+            title: "Are you sure?",
+            text: "Once deleted, you will not be able to recover this imaginary file!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    swal("Poof! Your imaginary file has been deleted!", {
+                        icon: "success",
+                    });
+                } else {
+                    swal("Your imaginary file is safe!");
+                }
+            });
+    }
+
+    const tableRows = jsondata.map((info) => {
+        return (
+            <tr>
+                <td>{info.id}</td>
+                <td>{info.date_input}</td>
+                <td>{info.course.judul}</td>
+                <td>{info.categories}</td>
+                <td>{info.course.Link}</td>
+                <td colSpan={2}>
+                    <Button variant="outline-success">Edit</Button>{' '}
+                    <Button variant="outline-primary">Edit</Button>{' '}
+                    <Button variant="outline-danger" onClick={deleteClick}>Delete</Button>
+                </td>
+            </tr>
+        )
+    })
+
     return (
         <React.Fragment>
             <div className="Dash">
@@ -26,50 +70,7 @@ function Dashboard() {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>11/11/22</td>
-                                <td>Lorem ipsum dolor sit.</td>
-                                <td>HTML</td>
-                                <td>Lorem ipsum dolor sit amet consectetur adipisicing</td>
-                                <td colSpan={2}>
-                                    <Button variant="outline-primary">Edit</Button>{' '}
-                                    <Button variant="outline-danger">Delete</Button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>11/11/22</td>
-                                <td>Lorem ipsum dolor sit.</td>
-                                <td>HTML</td>
-                                <td>Lorem ipsum dolor sit amet consectetur adipisicing</td>
-                                <td colSpan={2}>
-                                    <Button variant="outline-primary">Edit</Button>{' '}
-                                    <Button variant="outline-danger">Delete</Button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>11/11/22</td>
-                                <td>Lorem ipsum dolor sit.</td>
-                                <td>HTML</td>
-                                <td>Lorem ipsum dolor sit amet consectetur adipisicing</td>
-                                <td colSpan={2}>
-                                    <Button variant="outline-primary">Edit</Button>{' '}
-                                    <Button variant="outline-danger">Delete</Button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>11/11/22</td>
-                                <td>Lorem ipsum dolor sit.</td>
-                                <td>HTML</td>
-                                <td>Lorem ipsum dolor sit amet consectetur adipisicing</td>
-                                <td colSpan={2}>
-                                    <Button variant="outline-primary">Edit</Button>{' '}
-                                    <Button variant="outline-danger">Delete</Button>
-                                </td>
-                            </tr>
+                            {tableRows}
                         </tbody>
                     </Table>
                 </Container>
@@ -115,12 +116,12 @@ function Dashboard() {
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={handleClose}>
+                    <Button variant="primary" onClick={saveClick}>
                         Save Changes
                     </Button>
                 </Modal.Footer>
             </Modal>
-        </React.Fragment>
+        </React.Fragment >
     )
 }
 
