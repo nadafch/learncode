@@ -40,12 +40,12 @@ function Login() {
       <div className="Login">
         <Container>
           <Row className="px-4">
-            <Col className="mt-2">
+            <Col className="mt-2" data-aos="fade-right" data-aos-duration="1000">
               <img src={illustration} alt="Logo"
                 height={350} />
               <h6 >LearnCode membantu Anda belajar <br /> bahasa Pemograman.</h6>
             </Col>
-            <Col className="mt-5 pt-5">
+            <Col className="mt-5 pt-5" data-aos="fade-down" data-aos-duration="1000">
               <div>
                 <h3>LOGIN</h3>
                 <Form id="form" onSubmit={(event) => submitLogin(event)}>

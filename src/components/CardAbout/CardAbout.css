@@ -11,15 +11,25 @@ width: 25em;
 height: auto;
 border-radius: 7%;
 box-shadow: 3px 3px 3px grey;
+transform: scale(1);
+transition: all 0.2s ease-in-out;
 }
 
-.content .mx-auto{
+.card:hover{
+  transform: scale(1.05);
+}
+
+.content-card .mx-auto{
   object-fit:cover;
   border-radius: 50%;
   border:4px solid #4070f4;
   position:relative;
   z-index: 100;
 }
+.content-card:hover{
+  transform: scale(1.08);
+}
+
 .card_body{
     text-align: center;
 }
@@ -32,6 +42,10 @@ box-shadow: 3px 3px 3px grey;
   font-size: 12px;
   text-transform: uppercase;
 }
-    
+.social-media{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
