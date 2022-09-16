@@ -13,16 +13,6 @@ function Belajar() {
       </Container>
 
       <LearnMap />
-      {/* 
-      <Container className='mt-4 mb-5'>
-        <Pagination>
-          <Pagination.Item>{1}</Pagination.Item>
-          <Pagination.Item>{2}</Pagination.Item>
-          <Pagination.Item>{3}</Pagination.Item>
-          <Pagination.Ellipsis />
-          <Pagination.Next />
-        </Pagination>
-      </Container> */}
     </React.Fragment>
   )
 }

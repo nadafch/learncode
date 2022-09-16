@@ -45,3 +45,7 @@ div {
     padding-top: 10px;
     gap : 2rem;
 }
+
+.td {
+    text-decoration: none;
+}
