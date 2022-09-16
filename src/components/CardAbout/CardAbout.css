@@ -21,7 +21,7 @@ box-shadow: 3px 3px 3px grey;
   z-index: 100;
 }
 .content-card:hover{
-  transform: scale(1.02);
+  transform: scale(1.08);
 }
 
 .card_body{
