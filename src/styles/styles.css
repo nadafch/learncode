@@ -7,13 +7,6 @@ html, body, .App{
 div {
     font-family: 'Poppins', sans-serif;
 }
-.Login {
-    height: 93vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .nav {
     text-decoration: none;
 }

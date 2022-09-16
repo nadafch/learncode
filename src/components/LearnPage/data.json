@@ -1,0 +1,73 @@
+    {
+        "categories" :[
+            {
+                "id" : 1,
+                "nama" : "HTML"
+            },
+            {
+                "id" : 2,
+                "nama" : "Javascript"
+            },
+            {
+                "id" : 3,
+                "nama" : "CSS"
+            }
+        ],
+        "materi":[
+            {
+                "id" : 1,
+                "judul" : "Pendahuluan HTML 1",
+                "link" : "https://youtu.be/NBZ9Ro6UKV8",
+                "materi" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "images":"pendahuluanHTML1.jpg",
+                "categories" : {
+                    "id" : 1,
+                    "nama" : "HTML"
+                }
+            },
+            {
+                "id" : 2,
+                "judul" : "Pendahuluan HTML 2",
+                "link" : "https://youtu.be/NBZ9Ro6UKV8",
+                "materi" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                "images":"pendahuluanHTML2.jpg",
+                "categories" : {
+                    "id" : 1,
+                    "nama" : "HTML"
+                }
+            }
+            
+        ],
+        "wishlist":[
+            {
+                "materi":{
+                    "id" : 2,
+                    "judul" : "Pendahuluan HTML 2",
+                    "link" : "https://youtu.be/NBZ9Ro6UKV8",
+                    "images":"pendahuluanHTML2.jpg",
+                    "categories" : {
+                        "id" : 1,
+                        "nama" : "HTML"
+                    }
+                },
+                "keterangan" : "archived",
+                "id":1
+            }
+        ],
+        "publish":[
+            {
+                "materi":{
+                    "id" : 2,
+                    "judul" : "Pendahuluan HTML 2",
+                    "link" : "https://youtu.be/NBZ9Ro6UKV8",
+                    "images":"pendahuluanHTML2.jpg",
+                    "categories" : {
+                        "id" : 1,
+                        "nama" : "HTML"
+                    }
+                },
+                "keterangan" : "archived",
+                "id":1
+            }
+        ]
+    }

@@ -1,12 +1,12 @@
-import '../styles/AppFeatures.css';
-import html from '../assets/images/html.png';
-import css from '../assets/images/css.png';
-import js from '../assets/images/js.png';
-import react from '../assets/images/react.png';
-import git from '../assets/images/git.png';
-import nodejs from '../assets/images/nodejs.png';
-import fitur1 from '../assets/images/undraw_studying_re_deca.svg';
-import fitur2 from '../assets/images/undraw_book_lover_re_rwjy.svg';
+import '../../styles/AppFeatures.css';
+import html from '../../assets/images/html.png';
+import css from '../../assets/images/css.png';
+import js from '../../assets/images/js.png';
+import react from '../../assets/images/react.png';
+import git from '../../assets/images/git.png';
+import nodejs from '../../assets/images/nodejs.png';
+import fitur1 from '../../assets/images/undraw_studying_re_deca.svg';
+import fitur2 from '../../assets/images/undraw_book_lover_re_rwjy.svg';
 
 function AppFeatures() {
   return (
