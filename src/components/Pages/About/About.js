@@ -16,6 +16,9 @@ function About() {
               nama={d.nama}
               pendidikan={d.pendidikan}
               pengalaman ={d.pengalaman}
+              linkedin={d.linkedin}
+              instagram={d.instagram}
+              WhatsApp={d.WhatsApp}
               />
             ))}
         </div>
