@@ -5,30 +5,37 @@ const data = [
         nama:"Nada Filsa Chaitra",
         pendidikan:"S1 Teknik Informatika",
         pengalaman:"Frontend Developer Internship BALITTAS, Malang",
+        linkedin:"https://www.linkedin.com/in/radema-panjaitan-a69263181/",
+        instagram:""
     },
     {
         image:require('../../assets/images/syifa.jpg'),
         nama:"Syifa Nur Nabila ",
         pendidikan:"SMK Teknik Komputer & Jaringan",
         pengalaman:"  Mengikuti Bootcamp Front End di Kawah Edukasi",
+        linkedin:"https://www.linkedin.com/in/radema-panjaitan-a69263181/",
     },
     {
         image:require('../../assets/images/Wawan.jpg'),
         nama:"Wawan",
         pendidikan:"S1 Informatika",
         pengalaman:"Teknisi Komputer & Jaringan Di PT. Egyd Komputer",
+        linkedin:"https://www.linkedin.com/in/radema-panjaitan-a69263181/",
     },
     {
         image:require('../../assets/images/tachul.jpg'),
         nama:"Miftachul Huda",
         pendidikan:"D3 Teknologi Hasil Pertanian",
         pengalaman:"Frontend Developer Freelancer Project MBKM at UMY with React JS and Material UI, Remote.",
+        linkedin:"https://www.linkedin.com/in/radema-panjaitan-a69263181/",
     },
     {
         image:require("../../assets/images/Radema.jpeg"),
         nama:"Radema Panjaitan",
         pendidikan:"D3 Teknologi Komputer",
         pengalaman:"Mengikuti Bootcamp Front End di Kawah Edukasi",
+        linkedin:"https://www.linkedin.com/in/radema-panjaitan-a69263181/",
+        instagram: ""
     }
 ];
 export default data;
