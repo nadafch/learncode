@@ -19,11 +19,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 .Card {
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-evenly ;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 25px;
 }

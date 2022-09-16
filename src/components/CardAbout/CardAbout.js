@@ -7,7 +7,7 @@ import { MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
 function CardAbout({image,nama,pendidikan,pengalaman,linkedin,instagram,WhatsApp}) {
   return (
     <div>
-      <div className='content'>
+      <div className='content-card'>
     <Card>
     <div className='mx-auto'>
      <ReactRoundedImage
