@@ -15,6 +15,15 @@ div {
     align-items: center;
 }
 
+.Login p {
+    color: tomato;
+    font-size: 14px;
+}
+
+.Login h3 {
+    text-align: center;
+}
+
 .nav {
     text-decoration: none;
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
-import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 import { useNavigate, Link } from "react-router-dom"
 import LearnCode from '../assets/images/LearnCode.png'
 
@@ -19,32 +18,29 @@ function NavBar() {
     }
     return (
         <React.Fragment>
-            <Navbar bg="light" expand="lg">
-                <Container >
+            <Navbar bg="light">
+                <Container className='py-2'>
                     <Navbar.Brand>
                         <img src={LearnCode} alt="Logo"
                             height={23} />
                     </Navbar.Brand>
-                    <Navbar.Toggle/>
-                    <NavbarCollapse>
-                    <Nav className="justify-content-end" style={{ width: "100%" }}>
+                    <Nav className="justify-content-center" >
                         {
                             localStorage.getItem('token') === 'adaTokenNih' ? (
                                 <React.Fragment>
                                     <Nav.Link className="mx-5" to='/Dashboard'>All Course</Nav.Link>
-                                    <Button variant="outline-danger" onClick={(e) => handlerAction('logout')}>Logout</Button>
+                                    <Button className="px-3" variant="outline-danger" onClick={(e) => handlerAction('logout')}>Logout</Button>
                                 </React.Fragment>
                             ) : (
                                 <React.Fragment>
                                     <Nav.Link className="mx-5" as={Link} to='/'>Home</Nav.Link>
-                                    <Nav.Link className="mx-5" as={Link} to='/Belajar'>Belajar</Nav.Link>
+                                    <Nav.Link className="mr-3 ml-4" as={Link} to='/Belajar'>Courses</Nav.Link>
                                     <Nav.Link className="mx-5" as={Link} to='/About'>About Us</Nav.Link>
-                                    <Button variant="outline-primary" onClick={(e) => handlerAction('login')}>Login</Button>
+                                    <Button className="px-3" variant="outline-primary" onClick={(e) => handlerAction('login')}>Login</Button>
                                 </React.Fragment>
                             )
                         }
                     </Nav>
-                    </NavbarCollapse>
                 </Container>
             </Navbar>
         </React.Fragment>
