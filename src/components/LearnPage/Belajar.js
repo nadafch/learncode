@@ -8,21 +8,14 @@ function Belajar() {
     <React.Fragment>
       <SecondNav />
       <Container>
-        <h4 className='mt-5 text-start text-primary'><strong>Ini dia yang kamu cari</strong></h4>
-        <p className='mt-5 mb-5 text-start text-dark'><strong>Ada ${ } Artikel dalam Kategori HTML</strong></p>
+        <h4 className='mt-5 text-center text-primary'><strong>Ini dia yang kamu cari</strong></h4>
+        <p className='mt-5 mb-5 text-center text-dark'><strong>Ada ${ } Artikel dalam Kategori HTML</strong></p>
       </Container>
+      <div className='container'>
+        <LearnMap />
+      </div>
 
-      <LearnMap />
-      {/* 
-      <Container className='mt-4 mb-5'>
-        <Pagination>
-          <Pagination.Item>{1}</Pagination.Item>
-          <Pagination.Item>{2}</Pagination.Item>
-          <Pagination.Item>{3}</Pagination.Item>
-          <Pagination.Ellipsis />
-          <Pagination.Next />
-        </Pagination>
-      </Container> */}
+
     </React.Fragment>
   )
 }
