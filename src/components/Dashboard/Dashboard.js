@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import swal from "sweetalert";
 import { Table, Container, Button, Modal, Form, Dropdown, DropdownButton } from "react-bootstrap";
 import data from "./data.json"
@@ -9,7 +9,6 @@ function Dashboard() {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
-    const [jsondata, setJsonData] = useState(data);
     const saveClick = () => {
         swal("Good job!", "Your data have been saved", "success");
         handleClose();
@@ -33,22 +32,10 @@ function Dashboard() {
             });
     }
 
-    const tableRows = jsondata.map((info) => {
-        return (
-            <tr>
-                <td>{info.id}</td>
-                <td>{info.date_input}</td>
-                <td>{info.course.judul}</td>
-                <td>{info.categories}</td>
-                <td>{info.course.Link}</td>
-                <td colSpan={2}>
-                    <Button variant="outline-success">Edit</Button>{' '}
-                    <Button variant="outline-primary">Edit</Button>{' '}
-                    <Button variant="outline-danger" onClick={deleteClick}>Delete</Button>
-                </td>
-            </tr>
-        )
-    })
+    const [jsondata, setJsonData] = useState([]);
+    useEffect(() => {
+        setJsonData(data)
+    }, [])
 
     return (
         <React.Fragment>
@@ -70,7 +57,22 @@ function Dashboard() {
                             </tr>
                         </thead>
                         <tbody>
-                            {tableRows}
+                            {
+                                jsondata.map((value, index) => (
+                                    <tr>
+                                        <td>{value.id}</td>
+                                        <td>{value.date_input}</td>
+                                        <td>{value.course.judul}</td>
+                                        <td>{value.categories}</td>
+                                        <td>{value.course.Link}</td>
+                                        <td colSpan={2}>
+                                            <Button variant="outline-success">Detail</Button>{' '}
+                                            <Button variant="outline-primary">Edit</Button>{' '}
+                                            <Button variant="outline-danger" onClick={deleteClick}>Delete</Button>
+                                        </td>
+                                    </tr>
+                                ))
+                            }
                         </tbody>
                     </Table>
                 </Container>
