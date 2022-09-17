@@ -6,7 +6,7 @@ function LearnPage({ image, judul, penulis, text, id }) {
         <React.Fragment>
 
             <Col xs={5} md={3} className='mb-3'>
-                <Card style={{ width: '19rem' }} className='p-2 mb-3'>
+                <Card style={{ width: '19rem' }} className='p-2 mb-3' data-aos="fade-up" data-aos-duration="500">
                     <a href="/">
                         <Card.Img variant="top" src={image} alt="HTML" className='border border-white' />
                     </a>
