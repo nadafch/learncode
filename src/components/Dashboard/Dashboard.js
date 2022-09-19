@@ -3,6 +3,7 @@ import swal from "sweetalert";
 import { Table, Container, Button, Modal, Form, Dropdown, DropdownButton } from "react-bootstrap";
 import data from "./data.json"
 import "../../styles/style.css"
+import DashboardContent from "./DashboardContent";
 
 function Dashboard() {
     const [show, setShow] = useState(false);
@@ -13,24 +14,7 @@ function Dashboard() {
         swal("Good job!", "Your data have been saved", "success");
         handleClose();
     }
-    const deleteClick = () => {
-        swal({
-            title: "Are you sure?",
-            text: "Once deleted, you will not be able to recover this imaginary file!",
-            icon: "warning",
-            buttons: true,
-            dangerMode: true,
-        })
-            .then((willDelete) => {
-                if (willDelete) {
-                    swal("Poof! Your imaginary file has been deleted!", {
-                        icon: "success",
-                    });
-                } else {
-                    swal("Your imaginary file is safe!");
-                }
-            });
-    }
+
 
     const [jsondata, setJsonData] = useState([]);
     useEffect(() => {
@@ -39,43 +23,11 @@ function Dashboard() {
 
     return (
         <React.Fragment>
-            <div className="Dash">
-                <div className="d-flex justify-content-center px-auto pt-4">
-                    <h3><strong>Daftar Materi</strong></h3>
-                </div>
-                <Container className="dashboard text-center">
+            <div className="d-flex flex-column p-5 px-auto pt-4 gap-4">
+                <div className="d-flex justify-content-end">
                     <Button variant="outline-primary" onClick={handleShow}>Tambahkan data</Button>
-                    <Table striped bordered hover>
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Tanggal</th>
-                                <th>Judul</th>
-                                <th>Topik</th>
-                                <th>Link Video</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                jsondata.map((value, index) => (
-                                    <tr>
-                                        <td>{value.id}</td>
-                                        <td>{value.date_input}</td>
-                                        <td>{value.course.judul}</td>
-                                        <td>{value.categories}</td>
-                                        <td>{value.course.Link}</td>
-                                        <td colSpan={2}>
-                                            <Button variant="outline-success">Detail</Button>{' '}
-                                            <Button variant="outline-primary">Edit</Button>{' '}
-                                            <Button variant="outline-danger" onClick={deleteClick}>Delete</Button>
-                                        </td>
-                                    </tr>
-                                ))
-                            }
-                        </tbody>
-                    </Table>
-                </Container>
+                </div>
+                <DashboardContent props={jsondata} />
             </div>
             <Modal show={show} onHide={handleClose} size="lg">
                 <Modal.Header closeButton>
@@ -123,7 +75,7 @@ function Dashboard() {
                     </Button>
                 </Modal.Footer>
             </Modal>
-        </React.Fragment >
+        </React.Fragment>
     )
 }
 
