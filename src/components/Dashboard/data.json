@@ -1,17 +1,17 @@
    [
     {
         "id": "1",
-        "categories": "HTML",
-        "tingkat": "Beginner",
-        "course":
-        {
+        "nama": "12-12-12",
+        "image": "HTML",
+        "description1": "Beginner",
+        
+        "description2": {
             "judul": "Pendahuluan I Cara Membuat Tabel di HTML",
             "materi": "HTML (HyperText Markup Language) adalah suatu bahasa",
             "image": "css.png",
             "Link": "https://youtu.be/NBZ9Ro6UKV8"
         },
-        "date_input": "12-12-12",
-        "date_update": ","
+        "description3": ","
     },
     {
         "id": "2",

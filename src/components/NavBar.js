@@ -4,6 +4,7 @@ import { useNavigate, Link } from "react-router-dom"
 import LearnCode from '../assets/images/LearnCode.png'
 
 function NavBar() {
+    const token = localStorage.getItem("token")
     const navigate = useNavigate();
     function handlerAction(type) {
         switch (type) {
@@ -26,7 +27,7 @@ function NavBar() {
                     </Navbar.Brand>
                     <Nav className="justify-content-center" >
                         {
-                            localStorage.getItem('token') === 'adaTokenNih' ? (
+                            token ? (
                                 <React.Fragment>
                                     <Nav.Link className="mx-5" to='/Dashboard'>All Course</Nav.Link>
                                     <Button className="px-3" variant="outline-danger" onClick={(e) => handlerAction('logout')}>Logout</Button>
@@ -34,7 +35,7 @@ function NavBar() {
                             ) : (
                                 <React.Fragment>
                                     <Nav.Link className="mx-5" as={Link} to='/'>Home</Nav.Link>
-                                    <Nav.Link className="mr-3 ml-4" as={Link} to='/Belajar'>Courses</Nav.Link>
+                                    <Nav.Link className="mr-3 ml-4" as={Link} to='/Data'>Courses</Nav.Link>
                                     <Nav.Link className="mx-5" as={Link} to='/About'>About Us</Nav.Link>
                                     <Button className="px-3" variant="outline-primary" onClick={(e) => handlerAction('login')}>Login</Button>
                                 </React.Fragment>

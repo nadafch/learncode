@@ -25,24 +25,24 @@ const deleteClick = () => {
 
 const columns = [{
     dataField: 'id',
-    text: 'No',
+    text: 'id',
     sort: true
 }, {
-    dataField: 'date_input',
-    text: 'Tanggal Input',
+    dataField: 'name',
+    text: 'nama',
 }, {
-    dataField: 'course.judul',
-    text: 'Judul Materi',
+    dataField: 'image',
+    text: 'image',
     sort: true
 }, {
-    dataField: 'categories',
-    text: 'Kategori'
+    dataField: 'description1',
+    text: 'description1'
 }, {
-    dataField: 'course.Link',
-    text: 'Link Video'
+    dataField: 'description2',
+    text: 'description2'
 }, {
-    dataField: 'action',
-    text: 'Action',
+    dataField: 'description3',
+    text: 'description3',
     formatter: (rowContent, row) => {
         return (
             <div>

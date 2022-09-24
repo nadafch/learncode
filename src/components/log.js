@@ -1,15 +1,26 @@
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import illustration from "../assets/images/login_illus.png"
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useEffect, useState, useRef } from "react";
 
 
-function Login() {
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
-    const [errorMessage, setErrorMessage] = useState('')
+function Log() {
+    const usernameRef = useRef();
+    const errRef = useRef();
+
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
+    const [success, setSuccess] = useState(false);
     const navigate = useNavigate();
+
+    useEffect(() => {
+        usernameRef.current.focus();
+    }, [])
+
+    useEffect(() => {
+        setErrorMessage('');
+    }, [username, password])
 
     function handlerForm(type, value) {
         switch (type) {
@@ -22,27 +33,17 @@ function Login() {
         }
     }
 
-    const submitLogin = async (event) => {
+    function submitLogin(event) {
         event.preventDefault()
-        try {
-            const res = await axios.post("https://kawahedukasibackend.herokuapp.com/login",
-                { username, password });
-
-            if (res.status === 200) {
-                localStorage.setItem("token", res.data.access_token);
+        if (username && password) {
+            if (username === 'admin' && password === 'admin123') {
+                localStorage.setItem('token', 'adaTokenNih')
                 navigate('/Dashboard')
+            } else {
+                setErrorMessage('username dan password anda salah')
             }
-        } catch (err) {
-            if (err.response.status === 401) {
-                setErrorMessage('Usrname atau Password Salah')
-                console.log(err);
-                setUsername('')
-                setPassword('')
-            } else if (err.response.status === 0) {
-                setErrorMessage('Internet Anda Tidak Terkoneksi')
-                setUsername('')
-                setPassword('')
-            }
+        } else {
+            setErrorMessage('username dan password tidak boleh kosong')
         }
     }
 
@@ -59,7 +60,7 @@ function Login() {
                         <Col className="mt-5 pt-5" data-aos="fade-down" data-aos-duration="1000">
                             <div>
                                 <h3>LOGIN</h3>
-                                <Form id="form" onSubmit={submitLogin}>
+                                <Form id="form" onSubmit={(event) => submitLogin(event)}>
                                     <Form.Group className="mb-3">
                                         <Form.Label>Username</Form.Label>
                                         <Form.Control style={{ border: "1.5px solid blue", borderRadius: "0" }} type="text" placeholder="Enter Username" value={username} onChange={(event) => handlerForm('username', event.target.value)} />
@@ -91,4 +92,4 @@ function Login() {
     )
 }
 
-export default Login;
+export default Log;
