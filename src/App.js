@@ -2,6 +2,7 @@ import Home from "./components/Home";
 import Login from "./components/login";
 import NavBar from "./components/NavBar";
 import Foot from "./components/foot";
+import Belajar from "./components/LearnPage/Belajar";
 import Data from "./components/Data/Data";
 import About from "./components/CardAbout/About";
 import FourZeroFour from "./components/FourZeroFour";
@@ -22,7 +23,7 @@ function App() {
                 <Route path="/" element={<Home />} exact />
                 <Route path="/Login" element={<Login />} exact />
                 <Route path="/Dashboard" element={<Dashboard />} exact />
-                <Route path="/Data" element={<Data />} exact />
+                <Route path="/Belajar" element={<Belajar />} exact />
                 <Route path="/About" element={<About />} exact />
                 {/* <Route path="/" element>
                     {<ArtikelUser />}

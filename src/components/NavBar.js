@@ -35,7 +35,7 @@ function NavBar() {
                             ) : (
                                 <React.Fragment>
                                     <Nav.Link className="mx-5" as={Link} to='/'>Home</Nav.Link>
-                                    <Nav.Link className="mr-3 ml-4" as={Link} to='/Data'>Courses</Nav.Link>
+                                    <Nav.Link className="mr-3 ml-4" as={Link} to='/Belajar'>Courses</Nav.Link>
                                     <Nav.Link className="mx-5" as={Link} to='/About'>About Us</Nav.Link>
                                     <Button className="px-3" variant="outline-primary" onClick={(e) => handlerAction('login')}>Login</Button>
                                 </React.Fragment>
