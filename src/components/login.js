@@ -2,6 +2,7 @@ import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import illustration from "../assets/images/login_illus.png"
 import React, { useState } from "react";
+import axios from "axios";
 
 
 function Login() {
@@ -21,17 +22,27 @@ function Login() {
     }
   }
 
-  function submitLogin(event) {
+  const submitLogin = async (event) => {
     event.preventDefault()
-    if (username && password) {
-      if (username == 'admin' && password == 'admin123') {
-        localStorage.setItem('token', 'adaTokenNih')
+    try {
+      const res = await axios.post("https://kawahedukasibackend.herokuapp.com/login",
+        { username, password });
+
+      if (res.status === 200) {
+        localStorage.setItem("token", res.data.access_token);
         navigate('/Dashboard')
-      } else {
-        setErrorMessage('username dan password anda salah')
       }
-    } else {
-      setErrorMessage('username dan password tidak boleh kosong')
+    } catch (err) {
+      if (err.response.status === 401) {
+        setErrorMessage('Usrname atau Password Salah')
+        console.log(err);
+        setUsername('')
+        setPassword('')
+      } else if (err.response.status === 0) {
+        setErrorMessage('Internet Anda Tidak Terkoneksi')
+        setUsername('')
+        setPassword('')
+      }
     }
   }
 
@@ -48,7 +59,7 @@ function Login() {
             <Col className="mt-5 pt-5" data-aos="fade-down" data-aos-duration="1000">
               <div>
                 <h3>LOGIN</h3>
-                <Form id="form" onSubmit={(event) => submitLogin(event)}>
+                <Form id="form" onSubmit={submitLogin}>
                   <Form.Group className="mb-3">
                     <Form.Label>Username</Form.Label>
                     <Form.Control style={{ border: "1.5px solid blue", borderRadius: "0" }} type="text" placeholder="Enter Username" value={username} onChange={(event) => handlerForm('username', event.target.value)} />
