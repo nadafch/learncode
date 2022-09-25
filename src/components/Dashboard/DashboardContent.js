@@ -32,17 +32,17 @@ const columns = [{
     text: 'nama',
 }, {
     dataField: 'image',
-    text: 'image',
-    sort: true
+    text: 'link image',
 }, {
     dataField: 'description1',
-    text: 'description1'
+    text: 'Kategori',
+    sort: true
 }, {
     dataField: 'description2',
-    text: 'description2'
+    text: 'Materi'
 }, {
-    dataField: 'description3',
-    text: 'description3',
+    dataField: '',
+    text: 'Action',
     formatter: (rowContent, row) => {
         return (
             <div>
