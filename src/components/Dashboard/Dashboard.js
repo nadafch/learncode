@@ -32,11 +32,6 @@ function Dashboard() {
     }
 
 
-    const [jsondata, setJsonData] = useState([]);
-    useEffect(() => {
-        setJsonData(data)
-    }, [])
-
     return (
         <React.Fragment>
             <div className="d-flex flex-column p-5 px-auto pt-4 gap-4">
