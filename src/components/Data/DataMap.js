@@ -1,35 +1,43 @@
 import React, { useState } from "react";
-import LearnPage from './LearnPage';
-import learn from './DataLearn';
 import ReactPaginate from 'react-paginate';
-import "./Learn.css"
+import DataPage from "./DataPage";
+import "./Data.css"
 import axios from "axios";
 
-function LearnMap() {
-    const [contents, setContents] = useState([]);
+function DataMap() {
     const [pageNumber, setPageNumber] = useState(0)
+    const [kawahs, setKawahs] = useState([
 
-    axios.get("https://kawahedukasibackend.herokuapp.com/content/data/learncode").then(
-        res => {
-            setContents(res.data)
-        }).catch(error => { console.log("Error", error); })
+    ]);
 
-    const contentsPerPage = 6
-    const pagesVisited = pageNumber * contentsPerPage
+    console.log('aku')
 
-    const displayContents = contents
-        .slice(pagesVisited, pagesVisited + contentsPerPage)
+    axios.get("https://kawahedukasibackend.herokuapp.com/content/data/learncode")
+        .then(res => {
+            console.log(res)
+            setKawahs(res.data)
+        })
+        .catch(error => {
+            console.log("Error yaa ", error);
+        })
+
+    const kawahsPerPage = 6
+    const pagesVisited = pageNumber * kawahsPerPage
+
+    console.log(kawahs)
+
+    const displayKawahs = kawahs
+        .slice(pagesVisited, pagesVisited + kawahsPerPage)
         .map((user) => {
             return (
-                <LearnPage
-                    image={user.image}
-                    judul={user.name}
-                    text={user.description2}
+                <DataPage
+                    pictureFront={user.image}
+                    name={user.name}
                 />
             );
         });
 
-    const pageCount = Math.ceil(contents.length / contentsPerPage)
+    const pageCount = Math.ceil(kawahs.length / kawahsPerPage)
 
     const changePage = ({ selected }) => {
         setPageNumber(selected);
@@ -37,7 +45,7 @@ function LearnMap() {
 
     return (
         <div className='Card'>
-            {displayContents}
+            {displayKawahs}
             <ReactPaginate
                 perviousLabel={"Previous"}
                 nextLabel={"Next"}
@@ -54,4 +62,4 @@ function LearnMap() {
     )
 }
 
-export default LearnMap;
+export default DataMap;

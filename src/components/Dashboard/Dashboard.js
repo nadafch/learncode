@@ -4,11 +4,27 @@ import { Table, Container, Button, Modal, Form, Dropdown, DropdownButton } from 
 import data from "./data.json"
 import "../../styles/style.css"
 import DashboardContent from "./DashboardContent";
+import axios from "axios";
 
 function Dashboard() {
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const [kawahs, setKawahs] = useState([
+
+    ]);
+
+    axios.get("https://kawahedukasibackend.herokuapp.com/content/data/learncode")
+        .then(res => {
+            // console.log(res)
+            setKawahs(res.data)
+        })
+        .catch(error => {
+            console.log("Error yaa ", error);
+        })
+
+
 
     const saveClick = () => {
         swal("Good job!", "Your data have been saved", "success");
@@ -27,7 +43,7 @@ function Dashboard() {
                 <div className="d-flex justify-content-end">
                     <Button variant="outline-primary" onClick={handleShow}>Tambahkan data</Button>
                 </div>
-                <DashboardContent props={jsondata} />
+                <DashboardContent props={kawahs} />
             </div>
             <Modal show={show} onHide={handleClose} size="lg">
                 <Modal.Header closeButton>

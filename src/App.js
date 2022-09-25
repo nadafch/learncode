@@ -3,6 +3,7 @@ import Login from "./components/login";
 import NavBar from "./components/NavBar";
 import Foot from "./components/foot";
 import Belajar from "./components/LearnPage/Belajar";
+import Data from "./components/Data/Data";
 import About from "./components/CardAbout/About";
 import FourZeroFour from "./components/FourZeroFour";
 import { Route, Routes } from "react-router-dom";
