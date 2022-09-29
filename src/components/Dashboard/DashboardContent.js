@@ -31,15 +31,15 @@ const columns = [{
     dataField: 'description3',
     text: 'Tanggal Input',
 }, {
+    dataField: 'image',
+    text: 'link image',
+}, {
     dataField: 'description1',
-    text: 'Judul Materi',
+    text: 'Kategori',
     sort: true
 }, {
-    dataField: 'name',
-    text: 'Kategori'
-}, {
     dataField: 'description2',
-    text: 'Link Video'
+    text: 'Materi'
 }, {
     dataField: '',
     text: 'Action',

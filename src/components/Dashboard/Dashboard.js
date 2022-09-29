@@ -17,7 +17,7 @@ function Dashboard() {
 
     axios.get("https://kawahedukasibackend.herokuapp.com/content/data/learncode")
         .then(res => {
-            console.log(res)
+            // console.log(res)
             setKawahs(res.data)
         })
         .catch(error => {

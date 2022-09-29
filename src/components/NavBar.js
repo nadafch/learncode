@@ -19,29 +19,32 @@ function NavBar() {
     }
     return (
         <React.Fragment>
-            <Navbar bg="light">
+            <Navbar bg="light" expand="lg">
                 <Container className='py-2'>
                     <Navbar.Brand>
                         <img src={LearnCode} alt="Logo"
                             height={23} />
                     </Navbar.Brand>
-                    <Nav className="justify-content-center" >
-                        {
-                            token ? (
-                                <React.Fragment>
-                                    <Nav.Link className="mx-5" to='/Dashboard'>All Course</Nav.Link>
-                                    <Button className="px-3" variant="outline-danger" onClick={(e) => handlerAction('logout')}>Logout</Button>
-                                </React.Fragment>
-                            ) : (
-                                <React.Fragment>
-                                    <Nav.Link className="mx-5" as={Link} to='/'>Home</Nav.Link>
-                                    <Nav.Link className="mr-3 ml-4" as={Link} to='/Belajar'>Courses</Nav.Link>
-                                    <Nav.Link className="mx-5" as={Link} to='/About'>About Us</Nav.Link>
-                                    <Button className="px-3" variant="outline-primary" onClick={(e) => handlerAction('login')}>Login</Button>
-                                </React.Fragment>
-                            )
-                        }
-                    </Nav>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end" >
+                        <Nav >
+                            {
+                                token ? (
+                                    <React.Fragment>
+                                        <Nav.Link className="mx-5" to='/Dashboard'>All Course</Nav.Link>
+                                        <Button variant="outline-danger" onClick={(e) => handlerAction('logout')}>Logout</Button>
+                                    </React.Fragment>
+                                ) : (
+                                    <React.Fragment>
+                                        <Nav.Link className="mx-5" as={Link} to='/'>Home</Nav.Link>
+                                        <Nav.Link className="mr-3 ml-4" as={Link} to='/Belajar'>Courses</Nav.Link>
+                                        <Nav.Link className="mx-5" as={Link} to='/About'>About Us</Nav.Link>
+                                        <Button variant="outline-primary" onClick={(e) => handlerAction('login')}>Login</Button>
+                                    </React.Fragment>
+                                )
+                            }
+                        </Nav>
+                    </Navbar.Collapse>
                 </Container>
             </Navbar>
         </React.Fragment>
