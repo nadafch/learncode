@@ -1,10 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
+import axios from 'axios';
+import { useParams, Link } from "react-router-dom";
 import BootstrapTable from 'react-bootstrap-table-next';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import swal from "sweetalert";
 
-const deleteClick = () => {
+const token = localStorage.getItem("token");
+const deletePost = async (id) => {
+    try {
+        const res = await axios({
+            method: "DELETE",
+            url: `https://kawahedukasibackend.herokuapp.com/content/delete/${id}`,
+            headers: { access_token: token }
+        })
+        if (res.status === 200) {
+            swal("Poof! Your imaginary file has been deleted!", {
+                icon: "success",
+            });
+        }
+    } catch (error) {
+        // swal(error, {
+        //     icon: "failed"
+        // }),
+        console.log(error);
+    }
+}
+const deleteClick = (id) => {
     swal({
         title: "Are you sure?",
         text: "Once deleted, you will not be able to recover this imaginary file!",
@@ -14,22 +36,28 @@ const deleteClick = () => {
     })
         .then((willDelete) => {
             if (willDelete) {
-                swal("Poof! Your imaginary file has been deleted!", {
+                deletePost(id)
+                swal("Data Sukses dihapus!", {
                     icon: "success",
                 });
             } else {
-                swal("Your imaginary file is safe!");
+                swal("Data gagal dihapus!");
             }
         });
 }
 
 const columns = [{
     dataField: 'id',
-    text: 'No',
+    text: 'id',
+    formatter: (cell, row, rowIndex, formatExtraData) => {
+        return rowIndex + 1;
+    },
     sort: true
-}, {
-    dataField: 'description3',
-    text: 'Tanggal Input',
+},
+{
+    dataField: 'name',
+    text: 'nama',
+    sort: true
 }, {
     dataField: 'image',
     text: 'link image',
@@ -41,15 +69,15 @@ const columns = [{
     dataField: 'description2',
     text: 'Materi'
 }, {
-    dataField: '',
+    dataField: 'link',
     text: 'Action',
     formatter: (rowContent, row) => {
         return (
             <div>
-                <Button variant="outline-success">Detail</Button>{' '}
-                <Button variant="outline-primary">Edit</Button>{' '}
-                <Button variant="outline-danger" onClick={deleteClick} >Delete</Button>
-            </div>
+                <Button variant="outline-success" as={Link} to={'/artikel/' + row.id}> Detail</Button>{' '}
+                <Button variant="outline-primary">Edit</Button>
+                <Button variant="outline-danger" onClick={() => deleteClick(row.id)} >Delete</Button>
+            </div >
         )
     }
 }
@@ -94,6 +122,7 @@ function DashboardContent({ props }) {
             text: 'All', value: props.length
         }] // A numeric array is also available. the purpose of above example is custom the text
     };
+
 
     return (
         <BootstrapTable keyField='id' data={props} columns={columns} defaultSorted={defaultSorted} pagination={paginationFactory(options)} />

@@ -9,7 +9,7 @@ function Belajar() {
       <SecondNav />
       <Container>
         <h4 className='mt-5 text-center text-primary'><strong>Ini dia yang kamu cari</strong></h4>
-        <p className='mt-5 mb-5 text-center text-dark'><strong>Ada ${ } Artikel dalam Kategori HTML</strong></p>
+        {/* <p className='mt-5 mb-5 text-center text-dark'><strong>Ada ${ } Artikel dalam Kategori HTML</strong></p> */}
       </Container>
       <div className='container'>
         <LearnMap />
