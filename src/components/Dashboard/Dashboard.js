@@ -36,26 +36,37 @@ function Dashboard() {
             console.log("Error yaa ", error);
         })
 
-        async function addContent(){
-            try {
-                let requestContent = await axios.post("https://kawahedukasibackend.herokuapp.com/content/create", data,{
-                    headers : {
-                        'access_token' : token
-                    }
-                })
-                let final = await requestContent
-                if (final.status === 201){
-                    saveClick()
+    async function addContent() {
+        try {
+            let requestContent = await axios.post("https://kawahedukasibackend.herokuapp.com/content/create", data, {
+                headers: {
+                    'access_token': token
                 }
-            } catch (err){
-                console.log(err);
+            })
+            let final = await requestContent
+            if (final.status === 201) {
+                saveClick()
+                setData({
+                    name: "",
+                    image: "",
+                    description1: "",
+                    description2: "",
+                    description3: "",
+                    description4: "",
+                    description5: "",
+                    description6: "",
+                })
+                navigate("/Dashboard")
             }
+        } catch (err) {
+            console.log(err);
         }
+    }
 
-        function handlerSubmit (e){
-            e.preventDefault()
-            addContent()
-        }
+    function handlerSubmit(e) {
+        e.preventDefault()
+        addContent()
+    }
 
     const saveClick = () => {
         swal("Good job!", "Your data have been saved", "success");
