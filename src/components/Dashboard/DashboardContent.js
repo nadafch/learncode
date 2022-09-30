@@ -5,6 +5,7 @@ import { useParams, Link } from "react-router-dom";
 import BootstrapTable from 'react-bootstrap-table-next';
 import paginationFactory from 'react-bootstrap-table2-paginator';
 import swal from "sweetalert";
+import ModalEdit from '../Artikel/Modal_Edit';
 
 const token = localStorage.getItem("token");
 const deletePost = async (id) => {
@@ -46,56 +47,61 @@ const deleteClick = (id) => {
         });
 }
 
-const columns = [{
-    dataField: 'id',
-    text: 'id',
-    formatter: (cell, row, rowIndex, formatExtraData) => {
-        return rowIndex + 1;
-    },
-    sort: true
-},
-{
-    dataField: 'name',
-    text: 'nama',
-    sort: true
-}, {
-    dataField: 'image',
-    text: 'link image',
-}, {
-    dataField: 'description1',
-    text: 'Kategori',
-    sort: true
-}, {
-    dataField: 'description2',
-    text: 'Materi'
-}, {
-    dataField: 'link',
-    text: 'Action',
-    formatter: (rowContent, row) => {
-        return (
-            <div>
-                <Button variant="outline-success" as={Link} to={'/artikel/' + row.id}> Detail</Button>{' '}
-                <Button variant="outline-primary">Edit</Button>
-                <Button variant="outline-danger" onClick={() => deleteClick(row.id)} >Delete</Button>
-            </div >
-        )
-    }
-}
-];
-
-const defaultSorted = [{
-    dataField: 'id',
-    order: 'asc'
-}];
-
-const customTotal = (from, to, size) => (
-    <span className="react-bootstrap-table-pagination-total">
-        Showing {from} to {to} of {size} Results
-    </span>
-);
-
 
 function DashboardContent({ props }) {
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const columns = [{
+        dataField: 'id',
+        text: 'id',
+        formatter: (cell, row, rowIndex, formatExtraData) => {
+            return rowIndex + 1;
+        },
+        sort: true
+    },
+    {
+        dataField: 'name',
+        text: 'nama',
+        sort: true
+    }, {
+        dataField: 'image',
+        text: 'link image',
+    }, {
+        dataField: 'description1',
+        text: 'Kategori',
+        sort: true
+    }, {
+        dataField: 'description2',
+        text: 'Materi'
+    }, {
+        dataField: 'link',
+        text: 'Action',
+        formatter: (rowContent, row) => {
+            return (
+                <div>
+                    <Button variant="outline-success" as={Link} to={'/artikel/' + row.id}> Detail</Button>{' '}
+                    <Button variant="outline-primary" onClick={handleShow}>Edit</Button>
+                    <ModalEdit show={show} handleClose={handleClose}></ModalEdit>
+                    <Button variant="outline-danger" onClick={() => deleteClick(row.id)} >Delete</Button>
+                </div >
+            )
+        }
+    }
+    ];
+
+    const defaultSorted = [{
+        dataField: 'id',
+        order: 'asc'
+    }];
+
+    const customTotal = (from, to, size) => (
+        <span className="react-bootstrap-table-pagination-total">
+            Showing {from} to {to} of {size} Results
+        </span>
+    );
+
     const options = {
         paginationSize: 4,
         pageStartIndex: 0,

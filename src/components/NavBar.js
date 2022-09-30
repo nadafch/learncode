@@ -31,14 +31,14 @@ function NavBar() {
                             {
                                 token ? (
                                     <React.Fragment>
-                                        <Nav.Link className="mx-5" to='/Dashboard'>All Course</Nav.Link>
+                                        <Nav.Link className="mx-5" to='/dashboard'>All Course</Nav.Link>
                                         <Button variant="outline-danger" onClick={(e) => handlerAction('logout')}>Logout</Button>
                                     </React.Fragment>
                                 ) : (
                                     <React.Fragment>
                                         <Nav.Link className="mx-5" as={Link} to='/'>Home</Nav.Link>
-                                        <Nav.Link className="mr-3 ml-4" as={Link} to='/Belajar'>Courses</Nav.Link>
-                                        <Nav.Link className="mx-5" as={Link} to='/About'>About Us</Nav.Link>
+                                        <Nav.Link className="mr-3 ml-4" as={Link} to='/belajar'>Courses</Nav.Link>
+                                        <Nav.Link className="mx-5" as={Link} to='/about'>About Us</Nav.Link>
                                         <Button variant="outline-primary" onClick={(e) => handlerAction('login')}>Login</Button>
                                     </React.Fragment>
                                 )

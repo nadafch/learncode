@@ -10,7 +10,7 @@ export default function foot() {
             <div className="">
                 <CDBBox display="flex" flex="column" className="mx-auto py-5" style={{ width: '90%' }}>
                     <CDBBox display="flex" justifyContent="between" className="flex-wrap">
-                        <CDBBox data-aos="fade-right" data-aos-duration="750">
+                        <CDBBox>
                             <a href="/" className="d-flex align-items-center p-0 text-dark">
                                 <img className='mb-1' alt="logo" src={LearnCode} height={30} />
                             </a>
@@ -29,7 +29,7 @@ export default function foot() {
                                 </CDBBtn>
                             </CDBBox>
                         </CDBBox>
-                        <CDBBox data-aos="fade-left" data-aos-duration="750">
+                        <CDBBox>
                             <p className="h5 mb-4" style={{ fontWeight: '600', color: '#4154F1' }}>
                                 Explore
                             </p>
@@ -40,7 +40,7 @@ export default function foot() {
                                 <a className="td text-dark" href="/">Contact</a>
                             </div>
                         </CDBBox>
-                        <CDBBox data-aos="fade-left" data-aos-duration="750">
+                        <CDBBox>
                             <p className="h5 mb-4" style={{ fontWeight: '600', color: '#4154F1' }}>
                                 Help
                             </p>
@@ -50,7 +50,7 @@ export default function foot() {
                                 <a className="td text-dark" href="/">Sign In</a>
                             </div>
                         </CDBBox>
-                        <CDBBox data-aos="fade-left" data-aos-duration="750">
+                        <CDBBox>
                             <p className="h5 mb-4" style={{ fontWeight: '600', color: '#4154F1' }}>
                                 Products
                             </p>
