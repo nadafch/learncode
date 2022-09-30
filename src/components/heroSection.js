@@ -1,5 +1,6 @@
 import React from 'react'
 import { Container, Row, Col, Button, } from 'react-bootstrap'
+import {Link} from "react-router-dom";
 import Hero from '../assets/images/Hero.png'
 import Aos from 'aos'
 
@@ -13,7 +14,7 @@ function HeroSection() {
                         <h1 className='mb-5 text-start '><strong>Temukan tempat belajar ngoding yang nyaman.</strong></h1>
                         <Button
                             className='d-grid btn-lg' data-aos="fade-up-right"
-                            variant="primary">Mulai Belajar</Button>{' '}
+                            variant="primary" as={Link} to={'/belajar'}>Mulai Belajar</Button>{' '}
                     </Col>
 
                     <Col className='mt-5 pt-4'>
