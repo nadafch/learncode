@@ -36,27 +36,26 @@ function Dashboard() {
             console.log("Error yaa ", error);
         })
 
-    const createData = async (e) => {
-        e.prevenDefault()
-        try {
-            const res = await axios({
-                method: "POST",
-                url: "https://kawahedukasibackend.herokuapp.com/content/create",
-                data: data,
-                headers: {
-                    access_token: token,
-                },
-            });
-
-            if (res.status === 201) {
-
-                saveClick();
-                navigate("/Dashboard")
+        async function addContent(){
+            try {
+                let requestContent = await axios.post("https://kawahedukasibackend.herokuapp.com/content/create", data,{
+                    headers : {
+                        'access_token' : token
+                    }
+                })
+                let final = await requestContent
+                if (final.status === 201){
+                    saveClick()
+                }
+            } catch (err){
+                console.log(err);
             }
-        } catch (err) {
-            console.log(err);
         }
-    }
+
+        function handlerSubmit (e){
+            e.preventDefault()
+            addContent()
+        }
 
     const saveClick = () => {
         swal("Good job!", "Your data have been saved", "success");
@@ -77,7 +76,7 @@ function Dashboard() {
                     <Modal.Title id="example-modal-sizes-title-lg">Tambah Materi</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Form onSubmit={createData}>
+                    <Form onSubmit={handlerSubmit}>
                         <Form.Group className="mb-3" >
                             <Form.Label>Judul materi</Form.Label>
                             <Form.Control
