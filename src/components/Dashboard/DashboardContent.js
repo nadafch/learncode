@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import BootstrapTable from "react-bootstrap-table-next";
 import paginationFactory from "react-bootstrap-table2-paginator";
 import swal from "sweetalert";
-import { Modal, Form, Dropdown, DropdownButton, Button } from "react-bootstrap";
+import { Modal, Form, Button } from "react-bootstrap";
 
 function DashboardContent({ props }) {
   const [show, setShow] = useState(false);

@@ -1,15 +1,6 @@
 import React, { useState, useEffect } from "react";
 import swal from "sweetalert";
-import {
-  Table,
-  Container,
-  Button,
-  Modal,
-  Form,
-  Dropdown,
-  DropdownButton,
-} from "react-bootstrap";
-import data from "./data.json";
+import { Button, Modal, Form } from "react-bootstrap";
 import "../../styles/style.css";
 import { useNavigate } from "react-router-dom";
 import DashboardContent from "./DashboardContent";
