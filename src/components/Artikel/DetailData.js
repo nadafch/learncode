@@ -10,8 +10,8 @@ export default function DetailData() {
     const [postData, setPostData] = useState([])
     let { id } = useParams()
 
-
-    axios.get("https://kawahedukasibackend.herokuapp.com/content/data/learncode")
+    const getData = async () => {
+        axios.get("https://kawahedukasibackend.herokuapp.com/content/data/learncode")
         .then(res => {
             let singleData = res.data.filter((item) => item.id === parseInt(id));
             setPostData(...singleData);
@@ -19,6 +19,12 @@ export default function DetailData() {
         .catch(error => {
             console.log("Error yaa ", error);
         })
+    }
+
+    useEffect(() => {
+        getData()
+    },[])
+    
 
     return (
         <ChildArtikel judul={postData.name}

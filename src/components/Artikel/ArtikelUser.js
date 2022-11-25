@@ -4,10 +4,10 @@ import SecondNav from "../secondaryNav";
 import ChildArtikel from "./ChildArtikel";
 import Foot from "../foot";
 
-function ArtikelUser() {
+function ArtikelUser(props) {
     return (
         <div>
-            <SecondNav />
+            <SecondNav/>
             <ChildArtikel />
         </div>
     );

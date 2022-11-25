@@ -1,8 +1,4 @@
 import React from "react";
-import axios from "axios";
-import { useParams } from 'react-router-dom'
-import { useState, useEffect } from "react";
-import Card from "react-bootstrap/Card";
 import "../../styles/ArtikelUser.css";
 
 
